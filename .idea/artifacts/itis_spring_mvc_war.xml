@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="itis-spring-mvc:war">
+    <output-path>$PROJECT_DIR$/spring-mvc/target</output-path>
+    <root id="archive" name="JavaServerFaces.war">
+      <element id="artifact" artifact-name="itis-spring-mvc:war exploded" />
+    </root>
+  </artifact>
+</component>

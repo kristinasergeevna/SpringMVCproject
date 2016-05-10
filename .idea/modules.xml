@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SpringMVCproject.iml" filepath="$PROJECT_DIR$/SpringMVCproject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/itis-app.iml" filepath="$PROJECT_DIR$/app/itis-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-mvc/itis-spring-mvc.iml" filepath="$PROJECT_DIR$/spring-mvc/itis-spring-mvc.iml" />
+    </modules>
+  </component>
+</project>

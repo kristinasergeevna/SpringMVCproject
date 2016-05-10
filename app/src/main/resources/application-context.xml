@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="file:c:/IdeaProjects/4semestr/JDBCProject/app/db/jdbc.properties"/>
+    <bean name="reporterApp" class="ioc.ReporterApp">
+        <constructor-arg index="0" ref="reporter"/>
+    </bean>
+    <bean name="reporter" class="ioc.HTMLReporter"/>
+    <bean id="databaseConfiguration" class="jdbc.DatabaseConfiguration">
+        <property name="databaseDriver" value="${db.driver}"/>
+        <property name="databaseUrl" value="${db.url}"/>
+        <property name="databaseUsername" value="${db.username}"/>
+        <property name="databasePassword" value="${db.password}"/>
+    </bean>
+
+
+
+    <bean id="corporateEventDao" class="jdbc.spring.JdbcCorporateEventDao">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!--
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${db.driver}"/>
+        <property name="url" value="${db.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>-->
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+        <property name="url" value="jdbc:derby:db"/>
+        <property name="username" value=""/>
+        <property name="password" value=""/>
+    </bean>
+</beans>
